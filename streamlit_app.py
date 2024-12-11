@@ -22,7 +22,149 @@ gsheet_urls = {
     "Demos": 'https://docs.google.com/spreadsheets/d/1HwS85Vk6cn877K9AgjWsrctYqEGSnNT-/export?format=csv&gid=1063943345'
 }
 
-@st.cache_data(ttl=3600, show_spinner=True, persist=True)
+def interfaz():
+    
+    locale.setlocale(locale.LC_ALL, 'es_ES')
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
+    
+
+    st.markdown("""
+    <h1 style='text-align: center; color: #005780; font-size: 15px;'>Nuestro desarrollo de software está transformando la forma en que trabajamos. Al automatizar tareas repetitivas, liberamos tiempo y recursos para que puedas concentrarte en lo que realmente importa.🖥</h1>
+    """, unsafe_allow_html=True)
+    
+    url_carteras = {
+        "Comfama": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Comfamax23.parquet",
+        "Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Azzorti.parquet",
+        "Cueros": r"C:\Users\\felip\\OneDrive\\Documentos\\Matris\\Cueros_Yes.parquet",
+        "Keypagos" : r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Keypagos.parquet",
+        "Linea Directa": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Linea_Directa.parquet",
+        "Nova Mexico": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Nova_Mexico.parquet",
+        "Nova_Colombia": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Nova_Colombia.parquet",
+        #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
+    }
+
+    url_Envios = {
+        #"Comfama": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Comfamax23.parquet",
+        "Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Envios\\AZ_Activos_Activos_Envios.parquet",
+        "Cueros": r"C:\Users\\felip\\OneDrive\\Documentos\\Matris\\Envios\\Cueros_Yes_Activos_Envios.parquet",
+        "Keypagos" : r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Envios\\Keypagos_Activos_Envios.parquet",
+        "Linea Directa": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Envios\\Linea_Directa_Activos_Envios.parquet",
+        "Nova Mexico": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Envios\\Nova_Mexico_Activos_Envios.parquet",
+        "Nova_Colombia": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Nova_Colombia.parquet",
+    }
+    
+    Pagos_Cruzados = {
+        "Comfama": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Comfamax23.parquet",
+        "Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Azzorti.parquet",
+        "Cueros": r"C:\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Cueros_Yes.parquet",
+        "Keypago" : r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Keypagos.parquet",
+        "Linea Directa": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Linea_Directa.parquet",
+        "Nova Mexico": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Nova_Mexico.parquet",
+        "Nova Colombia": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Pagos\\Si\\Nova_Colombia.parquet",
+    }
+    
+    
+    info_carteras = {
+        "Comfama": ['Saldo_Total_CO'],
+        "Azzorti": ['Saldo_Documento_AZ'],
+        "Cueros": ['Valor_saldo_total_créditos_CU'],
+        "Keypago" : ['Saldo_Total_a_Hoy_key'],
+        "Linea Directa": ['Saldo Total_LD'],
+        "Nova Mexico": ['Balance_Estimado_MX'],
+        "Nova Colombia": ['Balance_Estimado_COl'],
+    }
+    
+    Fechas_Creacion = {
+        "Comfama": ['Fecha_Creacion__CO'],
+        "Azzorti": ['Fecha_Creación_AZ'],
+        "Cueros": ['Fecha_Creación__CU'],
+        "Keypagos" : ['Fecha_Creación__key'],
+        "Linea Directa": ['Fecha_Creación__LD'],
+        "Nova Mexico": ['Fecha_Creacion__MX'],
+        "Nova_Colombia": ['Fecha_Creacion__COl'],
+        #"Dolce": ['Fecha Factura']
+    }
+    columnas_comunes = {
+        "Comfama": ['Buscador'],
+        "Azzorti": ['Buscador'],
+        "Cueros": ['Buscador'],
+        "Keypago" : ['Buscador'],
+        "Linea Directa": ['Buscador'],
+        "Nova Mexico": ['Buscador'],
+        "Nova Colombia": ['Buscador'],
+    }
+    meses = {
+        1: 'Enero',
+        2: 'Febrero',
+        3: 'Marzo',
+        4: 'Abril',
+        5: 'Mayo',
+        6: 'Junio',
+        7: 'Julio',
+        8: 'Agosto',
+        9: 'Septiembre',
+        10: 'Octubre',
+        11: 'Noviembre',
+        12: 'Diciembre',
+        1.0: 'Enero',
+        2.0: 'Febrero',
+        3.0: 'Marzo',
+        4.0: 'Abril',
+        5.0: 'Mayo',
+        6.0: 'Junio',
+        7.0: 'Julio',
+        8.0: 'Agosto',
+        9.0: 'Septiembre',
+        10.0: 'Octubre',
+        11.0: 'Noviembre',
+        12.0: 'Diciembre'
+    }
+    
+    
+    colores = {
+        1: dict(color='rgb(0, 102, 204)', width=2),    # Azul (intenso)
+        2: dict(color='rgb(255, 0, 0)', width=3),      # Rojo (intenso)
+        3: dict(color='rgb(0, 204, 0)', width=1),      # Verde (intenso)
+        4: dict(color='rgb(255, 140, 0)', width=1),    # Naranja (intenso)
+        5: dict(color='rgb(128, 0, 128)', width=1),    # Púrpura (intenso)
+        6: dict(color='rgb(255, 99, 71)', width=1),    # Tomate (intenso)
+        7: dict(color='rgb(0, 255, 255)', width=1),    # Cian (intenso)
+        8: dict(color='rgb(255, 20, 147)', width=1),   # Deep Pink (intenso)
+        9: dict(color='rgb(0, 255, 0)', width=1),      # Verde Limón (intenso)
+        10: dict(color='rgb(0, 100, 255)', width=1),   # Aqua (intenso)
+        11: dict(color='rgb(255, 165, 0)', width=1),   # Naranja (claro)
+        12: dict(color='rgb(75, 0, 130)', width=1)     # Índigo (intenso)
+    }
+    
+    
+    
+    color_map = {
+        1: 'rgba(0, 102, 204, 0.4)',    # Azul (intenso) con 40% de transparencia
+        2: 'rgba(255, 0, 0, 0.4)',      # Rojo (intenso) con 40% de transparencia
+        3: 'rgba(0, 204, 0, 0.4)',      # Verde (intenso) con 40% de transparencia
+        4: 'rgba(255, 140, 0, 0.4)',    # Naranja (intenso) con 40% de transparencia
+        5: 'rgba(128, 0, 128, 0.4)',    # Púrpura (intenso) con 40% de transparencia
+        6: 'rgba(255, 99, 71, 0.4)',    # Tomate (intenso) con 40% de transparencia
+        7: 'rgba(0, 255, 255, 0.4)',    # Cian (intenso) con 40% de transparencia
+        8: 'rgba(255, 20, 147, 0.4)',   # Deep Pink (intenso) con 40% de transparencia
+        9: 'rgba(0, 255, 0, 0.4)',      # Verde Limón (intenso) con 40% de transparencia
+        10: 'rgba(0, 100, 255, 0.4)',   # Aqua (intenso) con 40% de transparencia
+        11: 'rgba(255, 165, 0, 0.4)',   # Naranja (claro) con 40% de transparencia
+        12: 'rgba(75, 0, 130, 0.4)'     # Índigo (intenso) con 40% de transparencia
+    }
+    
+    columnas_por_cartera = {
+        "Comfama":["Descripcion_Traslado_CO","Tipo"],
+        "Azzorti": ["Codigo_Campana_AZ", "Etapa_AZ", "Efecto_AZ"],
+        "Cueros": ["Ano Castigo","Efecto", "Mejor_Efecto","Tipo"], #agregar año de castigo a partir de la fecha actualizacion
+        "Keypagos" : ["Franja","Efecto", "Mejor_Efecto","Tipo"],
+        "Linea Directa": ["Codigo de la Empresa_LD", "Ano Castigo_LD", "Franja", "Efecto", "Mejor_Efecto","Tipo","Franja"], 
+        "Nova Mexico": ["Segmento_MX","Detalle","Mejor_Efecto", "Efecto"],
+        "Nova_Colombia": ["Segmento_COl" ,"Numero_Traslado_COl", "Descripcion_Region_COl"]
+    
+    }
+    
+    @st.cache_data(ttl=3600, show_spinner=True, persist=True)
     def cargar_parquet(url):
     
         return pd.read_parquet(url)
