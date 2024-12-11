@@ -240,12 +240,7 @@ with tab2:
     with st.expander("Actualizaciones 💻"):
         tab54, tab55= st.tabs(["Descargar 📥","-"])
         with tab54: 
-                
-            def cargar_parquet(ruta):
-                # Función para cargar un archivo Parquet
-                return pd.read_parquet(ruta)
 
-           
             cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
             
             if cartera_seleccionada:
