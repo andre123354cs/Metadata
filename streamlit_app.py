@@ -37,8 +37,8 @@ url_carteras = {
 "Estimado": 'https://docs.google.com/spreadsheets/d/1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD/export?format=csv&gid=506507018',
 "Pagos": 'https://docs.google.com/spreadsheets/d/1x8OPh1Fndy2Lm1fjrWTShvubmytZJBbv/export?format=csv&gid=1269902588',
 "Estractor": 'https://docs.google.com/spreadsheets/d/1MYqkt0zUIk-I-INyv98r366v93Nxzsfv/export?format=csv&gid=2132397615',
-"Demos": 'https://docs.google.com/spreadsheets/d/1HwS85Vk6cn877K9AgjWsrctYqEGSnNT-/export?format=csv&gid=1063943345'.
-"Grafica": 'https://docs.google.com/spreadsheets/d/1ekBFslkQ_5n_Obc8DQ6u-f7Edcmr8_ra/export?format=csv&gid=336650499'.
+"Demos": 'https://docs.google.com/spreadsheets/d/1HwS85Vk6cn877K9AgjWsrctYqEGSnNT-/export?format=csv&gid=1063943345',
+"Grafica": 'https://docs.google.com/spreadsheets/d/1ekBFslkQ_5n_Obc8DQ6u-f7Edcmr8_ra/export?format=csv&gid=336650499',
 }
 
 url_Envios = {
