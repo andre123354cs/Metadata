@@ -80,11 +80,6 @@ url_carteras = {
 def cargar_datos(url):
     return pd.read_csv(url)
 
-# Título de la aplicación en Streamlit
-st.markdown("""
-<h1 style='text-align: center; color: #005780; font-size: 15px;'>Nuestro desarrollo de software está transformando la forma en que trabajamos. Al automatizar tareas repetitivas, liberamos tiempo y recursos para que puedas concentrarte en lo que realmente importa.🖥</h1>
-""", unsafe_allow_html=True)
-
 # Selección de cartera
 cartera_seleccionada = st.selectbox("Selecciona alguna cartera para descargar actualización: ", list(url_carteras.keys()))
 
@@ -95,10 +90,4 @@ if cartera_seleccionada:
     # Mostrar los datos en Streamlit
     st.dataframe(df, use_container_width=True, hide_index=True)
 
-    # Agregar filtro según una columna específica, por ejemplo, "Nombre"
-    filtro = st.text_input("Filtro por nombre:")
     
-    if filtro:
-        df_filtrado = df[df['Nombre'].str.contains(filtro, case=False, na=False)]
-        st.dataframe(df_filtrado, use_container_width=True, hide_index=True)
-
