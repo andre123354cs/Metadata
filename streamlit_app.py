@@ -8,7 +8,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
     )
-interfaz()
 
 def interfaz():
     
@@ -512,4 +511,5 @@ def interfaz():
     
                 # Visualizaciones (opcional)
                 #st.line_chart(df_filtrado['Columna_numerica'])  # Reemplaza 'Columna_numerica' con la columna deseada
-    
+interfaz()
+
