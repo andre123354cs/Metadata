@@ -88,13 +88,3 @@ if cartera_seleccionada:
 
 
 
-# Mostrar el número de clientes activos
-num_registros = len(df['Cartera_x'])
-st.write(f"Clientes Activos: {int(num_registros):,}")
-
-csv = df.to_csv(index=False)
-st.download_button(
-label= f"Descargar Actualizacion De {cartera_seleccionada}",
-data=csv,
-file_name= f"Actualizacion_{cartera_seleccionada}.csv",
-mime='text/csv')
