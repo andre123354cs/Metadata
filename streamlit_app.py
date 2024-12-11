@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import pandas as pd
 
@@ -36,4 +34,15 @@ if cartera_seleccionada:
     # Mostrar los datos en Streamlit
     st.dataframe(df, use_container_width=True, hide_index=True)
 
-   
+    # Crear un botón de descarga para el archivo completo
+    csv = df.to_csv(index=False)
+    b = io.BytesIO()
+    b.write(csv.encode())
+    b.seek(0)
+
+    st.download_button(
+        label="Descargar datos completos como CSV",
+        data=b,
+        file_name='datos_completos.csv',
+        mime='text/csv'
+    )
