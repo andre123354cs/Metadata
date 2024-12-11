@@ -36,10 +36,4 @@ if cartera_seleccionada:
     # Mostrar los datos en Streamlit
     st.dataframe(df, use_container_width=True, hide_index=True)
 
-    # Agregar filtro según una columna específica, por ejemplo, "Nombre"
-    filtro_columna = st.selectbox("Selecciona una columna para filtrar:", df.columns)
-    filtro_valor = st.text_input("Ingresa el valor del filtro:")
-
-    if filtro_valor:
-        df_filtrado = df[df[filtro_columna].astype(str).str.contains(filtro_valor, case=False, na=False)]
-        st.dataframe(df_filtrado, use_container_width=True, hide_index=True)
+   
