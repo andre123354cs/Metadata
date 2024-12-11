@@ -7,3 +7,4 @@ url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid=
 
 dfDatos= pd.read_csv(url)
 
+st.dataframe(dfDatos, use_container_width=True)
