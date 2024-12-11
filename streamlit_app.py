@@ -1,7 +1,14 @@
 import streamlit as st
 import pandas as pd
 import io
-# Definir las URLs de los archivos CSV en Google Sheets
+
+st.set_page_config(
+    page_title="MetaData",
+    page_icon=":chart_with_upwards_trend:",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+    )
+
 gsheet_urls = {
     "Comfama": 'https://docs.google.com/spreadsheets/d/1YIvDyrXcDBuz8-NldwlA8bH7lsi6jf3-/export?format=csv&gid=805003045',
     "Linea Directa": 'https://docs.google.com/spreadsheets/d/1EkyTvZWSs5AwXFUAMFbqDRBFwdv_IDIA/export?format=csv&gid=970977065',
@@ -15,7 +22,7 @@ gsheet_urls = {
     "Demos": 'https://docs.google.com/spreadsheets/d/1HwS85Vk6cn877K9AgjWsrctYqEGSnNT-/export?format=csv&gid=1063943345'
 }
 
-# Definir una función para cargar los datos
+@st.cache_data(ttl=3600, show_spinner=True, persist=True)
 def cargar_datos(url):
     return pd.read_csv(url)
 
