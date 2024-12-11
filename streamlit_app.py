@@ -60,3 +60,69 @@ sheetod='1063943345'
 url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
 Demos= pd.read_csv(url)
 st.dataframe(Demos, use_container_width=True)
+
+
+import streamlit as st
+import pandas as pd
+import locale
+import os
+import requests
+import re
+import glob
+import pyarrow.parquet as pq
+from datetime import datetime
+import calendar
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+import streamlit_authenticator as stauth
+
+
+
+def interfaz():
+    
+    locale.setlocale(locale.LC_ALL, 'es_ES')
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
+    
+
+    st.markdown("""
+    <h1 style='text-align: center; color: #005780; font-size: 15px;'>Nuestro desarrollo de software está transformando la forma en que trabajamos. Al automatizar tareas repetitivas, liberamos tiempo y recursos para que puedas concentrarte en lo que realmente importa.🖥</h1>
+    """, unsafe_allow_html=True)
+    
+    url_carteras = {
+        "Comfama": Comfama,
+        #"Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Azzorti.parquet",
+        "Cueros": Cueroz,
+        "Keypagos" : Key,
+        "Linea Directa": LD,
+        "Nova Mexico": Mexico,
+        "Nova_Colombia": Colombia,
+        #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
+    }
+
+  def cargar_parquet(ruta):
+      # Función para cargar un archivo Parquet
+      return pd.read_parquet(ruta)
+
+ 
+  cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
+  
+  if cartera_seleccionada:
+      # Cargar los datos
+      df = cargar_parquet(url_carteras[cartera_seleccionada])
+  
+      # Obtener la columna de fecha de creación según la cartera
+      columna_fecha = Fechas_Creacion[cartera_seleccionada][0]
+  
+  
+
+  # Mostrar el número de clientes activos
+  num_registros = len(df['Cartera_x'])
+  st.write(f"Clientes Activos: {int(num_registros):,}")
+
+  csv = df.to_csv(index=False)
+  st.download_button(
+  label= f"Descargar Actualizacion De {cartera_seleccionada}",
+  data=csv,
+  file_name= f"Actualizacion_{cartera_seleccionada}.csv",
+  mime='text/csv')
