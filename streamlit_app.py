@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import io
 # Definir las URLs de los archivos CSV en Google Sheets
 gsheet_urls = {
     "Comfama": 'https://docs.google.com/spreadsheets/d/1YIvDyrXcDBuz8-NldwlA8bH7lsi6jf3-/export?format=csv&gid=805003045',
