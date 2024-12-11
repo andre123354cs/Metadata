@@ -83,6 +83,10 @@ def cargar_datos(url):
 # Selección de cartera
 cartera_seleccionada = st.selectbox("Selecciona alguna cartera para descargar actualización: ", list(url_carteras.keys()))
 
-
+if cartera_seleccionada: 
+    # Cargar los datos de la cartera seleccionada 
+    df = cargar_datos(gsheet_urls[cartera_seleccionada]) 
+    # Mostrar los datos en Streamlit 
+    st.dataframe(df, use_container_width=True, hide_index=True)
 
     
