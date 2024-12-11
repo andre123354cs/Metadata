@@ -90,7 +90,7 @@ cartera_seleccionada = st.selectbox("Selecciona alguna cartera para descargar ac
 
 if cartera_seleccionada:
     # Cargar los datos de la cartera seleccionada
-    df = cargar_datos(gsheet_urls[cartera_seleccionada])
+    df = cargar_datos(url_carteras[cartera_seleccionada])
 
     # Mostrar los datos en Streamlit
     st.dataframe(df, use_container_width=True, hide_index=True)
