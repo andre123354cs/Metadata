@@ -246,7 +246,7 @@ with tab2:
                 return pd.read_parquet(ruta)
     
                
-            cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
+            cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(url_carteras.keys()))
                 
             if cartera_seleccionada:
                 # Cargar los datos
