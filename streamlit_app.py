@@ -81,10 +81,9 @@ cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar ac
       
 if cartera_seleccionada:
   # Cargar los datos
-  df = cargar_parquet(url_carteras[cartera_seleccionada])
+    df = cargar_parquet(url_carteras[cartera_seleccionada])
 
-  # Obtener la columna de fecha de creación según la cartera
-  columna_fecha = Fechas_Creacion[cartera_seleccionada][0]
+    st.dataframe(df, use_container_width=True, hide_index=True)
 
 
 
