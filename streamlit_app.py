@@ -83,10 +83,10 @@ url_carteras = {
     #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
 }
 def cargar_parquet(url):
-        return pd.read_parquet(url)
+        return pd.read_excel(url)
     
       def cargar_parquet(ruta):
-          return pd.read_parquet(ruta)
+          return pd.read_excel(ruta)
     
      
           cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
