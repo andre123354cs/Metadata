@@ -64,29 +64,3 @@ st.markdown("""
 <h1 style='text-align: center; color: #005780; font-size: 15px;'>Nuestro desarrollo de software está transformando la forma en que trabajamos. Al automatizar tareas repetitivas, liberamos tiempo y recursos para que puedas concentrarte en lo que realmente importa.🖥</h1>
 """, unsafe_allow_html=True)
 
-gsheet_urls = {
-    "Comfama": Comfama,
-    #"Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Azzorti.parquet",
-    "Cueros": Cueroz,
-    "Keypagos" : Key,
-    "Linea Directa": Directa,
-    "Nova Mexico": Mexico,
-    "Nova Colombia": Colombia,
-    #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
-}
-
-
-# Definir una función para cargar los datos
-def cargar_datos(url):
-    return pd.read_csv(url)
-
-# Selección de cartera
-cartera_seleccionada = st.selectbox("Selecciona alguna cartera para descargar actualización: ", list(gsheet_urls.keys()))
-
-if cartera_seleccionada: 
-    # Cargar los datos de la cartera seleccionada 
-    df = cargar_datos(gsheet_urls[cartera_seleccionada]) 
-    # Mostrar los datos en Streamlit 
-    st.dataframe(df, use_container_width=True, hide_index=True)
-
-    
