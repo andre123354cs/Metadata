@@ -82,9 +82,10 @@ url_carteras = {
     "Nova_Colombia": Colombia,
     #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
 }
-
+def cargar_parquet(url):
+        return pd.read_parquet(url)
+    
   def cargar_parquet(ruta):
-      # Función para cargar un archivo Parquet
       return pd.read_parquet(ruta)
 
  
