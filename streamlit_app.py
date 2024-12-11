@@ -10,8 +10,8 @@ import numpy as np
 
 def interfaz():
     
-    #locale.setlocale(locale.LC_ALL, 'es_ES')
-    #locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
+    locale.setlocale(locale.LC_ALL, 'es_ES')
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
     
 
     st.markdown("""
