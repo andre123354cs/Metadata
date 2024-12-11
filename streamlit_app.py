@@ -81,7 +81,7 @@ def cargar_datos(url):
     return pd.read_csv(url)
 
 # Selección de cartera
-cartera_seleccionada = st.selectbox("Selecciona alguna cartera para descargar actualización: ", list(url_carteras.keys()))
+cartera_seleccionada = st.selectbox("Selecciona alguna cartera para descargar actualización: ", list(gsheet_urls.keys()))
 
 if cartera_seleccionada: 
     # Cargar los datos de la cartera seleccionada 
