@@ -549,7 +549,7 @@ st.markdown("""
     </style>
 
     <div class="emoji-container">
-        <span class="rotating-emoji">🌍</span>
+        <span class="rotating-emoji">🌐</span>
         <h1 class="title">MetaData Yes BPO</h1>
     </div>
 """, unsafe_allow_html=True)
