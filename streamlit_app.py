@@ -9,3 +9,4 @@ df = pd.read_csv(url)
 
 # Mostrar el contenido del archivo CSV
 st.write(df)
+
