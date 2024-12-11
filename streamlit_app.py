@@ -13,7 +13,7 @@ import calendar
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
-import streamlit_authenticator as stauth
+
 
 
 gsheetid='1YIvDyrXcDBuz8-NldwlA8bH7lsi6jf3-'
