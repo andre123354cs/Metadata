@@ -241,8 +241,13 @@ with tab2:
         tab54, tab55= st.tabs(["Descargar 📥","-"])
         with tab54: 
 
+            def cargar_parquet(ruta):
+                    # Función para cargar un archivo Parquet
+                return pd.read_parquet(ruta)
+    
+               
             cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
-            
+                
             if cartera_seleccionada:
                 # Cargar los datos
                 df = cargar_parquet(url_carteras[cartera_seleccionada])
