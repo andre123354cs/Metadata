@@ -24,3 +24,21 @@ sheetod='1026942403'
 url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
 Key= pd.read_csv(url)
 st.dataframe(Key, use_container_width=True)
+
+gsheetid='1HFR7b0BbsivMJ_312RbBsEn6zXXz6kOV'
+sheetod='771180495'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
+Mexico= pd.read_csv(url)
+st.dataframe(Mexico, use_container_width=True)
+
+gsheetid='1aFg0IKbjk4uspp1w_1aXmVcjw4AYP7_D'
+sheetod='999400508'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
+Colombia= pd.read_csv(url)
+st.dataframe(Colombia, use_container_width=True)
+
+gsheetid='1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD'
+sheetod='506507018'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
+Key= pd.read_csv(url)
+st.dataframe(Key, use_container_width=True)
