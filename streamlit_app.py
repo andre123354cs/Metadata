@@ -40,5 +40,17 @@ st.dataframe(Colombia, use_container_width=True)
 gsheetid='1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD'
 sheetod='506507018'
 url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
-Key= pd.read_csv(url)
-st.dataframe(Key, use_container_width=True)
+Estimado= pd.read_csv(url)
+st.dataframe(Estimado, use_container_width=True)
+
+gsheetid='1x8OPh1Fndy2Lm1fjrWTShvubmytZJBbv'
+sheetod='1269902588'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
+Pagos= pd.read_csv(url)
+st.dataframe(Pagos, use_container_width=True)
+
+gsheetid='1MYqkt0zUIk-I-INyv98r366v93Nxzsfv'
+sheetod='2132397615'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
+Estractor= pd.read_csv(url)
+st.dataframe(Estractor, use_container_width=True)
