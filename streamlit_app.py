@@ -522,7 +522,7 @@ st.markdown("""
                 transform: rotateY(0deg);
             }
             100% {
-                transform: rotateY(360deg);
+                transform: rotateY(-360deg);
             }
         }
 
