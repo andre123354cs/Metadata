@@ -16,7 +16,7 @@ Comfama= pd.read_csv(url)
 gsheetid='1EkyTvZWSs5AwXFUAMFbqDRBFwdv_IDIA'
 sheetod='970977065'
 url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
-L_D= pd.read_csv(url)
+Directa= pd.read_csv(url)
 
 gsheetid='1GMOhp7Lcpx8JhSZ0UQAZOeQaUSTIgzOX'
 sheetod='492241411'
@@ -69,7 +69,7 @@ gsheet_urls = {
     #"Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Azzorti.parquet",
     "Cueros": Cueroz,
     "Keypagos" : Key,
-    "Linea Directa": L_D,
+    "Linea Directa": Directa,
     "Nova Mexico": Mexico,
     "Nova Colombia": Colombia,
     #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
