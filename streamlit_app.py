@@ -39,6 +39,7 @@ url_carteras = {
 "Estractor": 'https://docs.google.com/spreadsheets/d/1MYqkt0zUIk-I-INyv98r366v93Nxzsfv/export?format=csv&gid=2132397615',
 "Demos": 'https://docs.google.com/spreadsheets/d/1HwS85Vk6cn877K9AgjWsrctYqEGSnNT-/export?format=csv&gid=1063943345',
 "Grafica": 'https://docs.google.com/spreadsheets/d/1ekBFslkQ_5n_Obc8DQ6u-f7Edcmr8_ra/export?format=csv&gid=336650499',
+"Tabla_Principal": 'https://docs.google.com/spreadsheets/d/1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD/export?format=csv&gid=506507018',
 }
 
 url_Envios = {
@@ -169,7 +170,7 @@ def cargar_parquet(url):
 
 def generar_grafica_resumen(cartera, mes):
     
-    df = cargar_parquet("C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Grafica.parquet")
+    df = cargar_parquet('https://docs.google.com/spreadsheets/d/1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD/export?format=csv&gid=506507018')
     df = df[df['Cartera'] == cartera]
     df = df[df['Dia'] >= 1]
 
