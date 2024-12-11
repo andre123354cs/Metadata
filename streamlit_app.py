@@ -1,12 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-# URL del archivo CSV en GitHub
-url = "https://yesbpo201-my.sharepoint.com/personal/bi_yesbpo201_onmicrosoft_com/Documents/ACTUALIZACION/BD.csv"
+gsheetid='1YIvDyrXcDBuz8-NldwlA8bH7lsi6jf3-'
+sheetod='805003045'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
 
-# Cargar el archivo CSV
-df = pd.read_csv(url)
-
-# Mostrar el contenido del archivo CSV
-st.write(df)
+dfDatos= pd.read_csv(url)
 
