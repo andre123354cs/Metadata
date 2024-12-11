@@ -85,7 +85,7 @@ url_carteras = {
 def cargar_parquet(url):
     return pd.read_excel(url)
 
-      cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
+cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
       
       if cartera_seleccionada:
           # Cargar los datos
