@@ -232,29 +232,7 @@ with tab1:
 <h1 style='text-align: left; color: #005780; font-size: 24px;'>Salud Financiera 📈</h1>
 """, unsafe_allow_html=True)
     
-    df = cargar_parquet('https://docs.google.com/spreadsheets/d/1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD/export?format=csv&gid=506507018')
-
-    meses_unicos = df['Mes_Creacion'].unique()
-    meses_filtrados = {k: v for k, v in meses.items() if k in meses_unicos}
-
-    meses_ordenados = list(meses_filtrados.values())
-    meses_ordenados.sort()
-
-    mes_seleccionado = st.selectbox('Selecciona un mes', meses_ordenados, format_func=lambda x: f"{x}")
-
-    df_filtrado = df[df['Mes_Creacion'] == list(meses_filtrados.keys())[list(meses_filtrados.values()).index(mes_seleccionado)]]
-
     
-    columnas_ocultas = ['Mes_Creacion']
-    st.dataframe(df_filtrado.drop(columnas_ocultas, axis=1), use_container_width=True, hide_index=True)
-
-
-    st.markdown("""
-<h1 style='text-align: left; color: #005780; font-size: 24px;'>Grafica Comparativa Por Cartera 📊</h1>
-""", unsafe_allow_html=True)
-    cartera = st.selectbox('Selecciona una cartera:',list(url_carteras.keys()))
-
-    st.plotly_chart(generar_grafica_resumen(cartera,meses_unicos))
 
 
 with tab2:
