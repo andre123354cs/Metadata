@@ -1,5 +1,3 @@
 streamlit
 plotly
-streamlit-authenticator
-authenticator
-streamlit_authenticator as stauth
+
