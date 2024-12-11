@@ -71,7 +71,7 @@ url_carteras = {
     "Keypagos" : Key,
     "Linea Directa": LD,
     "Nova Mexico": Mexico,
-    "Nova_Colombia": Colombia,
+    "Nova Colombia": Colombia,
     #"Dolce": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Dolce_Actualizacion.csv",
 }
 
