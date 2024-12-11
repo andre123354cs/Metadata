@@ -232,7 +232,7 @@ with tab1:
 <h1 style='text-align: left; color: #005780; font-size: 24px;'>Salud Financiera 📈</h1>
 """, unsafe_allow_html=True)
     
-    df = cargar_parquet("C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Tabla_Princi.parquet")
+    df = cargar_parquet('https://docs.google.com/spreadsheets/d/1hGT-SReZ3HqD-Yc5zMVNzdSpaiRB_sfD/export?format=csv&gid=506507018')
 
     meses_unicos = df['Mes_Creacion'].unique()
     meses_filtrados = {k: v for k, v in meses.items() if k in meses_unicos}
