@@ -64,7 +64,7 @@ st.markdown("""
 <h1 style='text-align: center; color: #005780; font-size: 15px;'>Nuestro desarrollo de software está transformando la forma en que trabajamos. Al automatizar tareas repetitivas, liberamos tiempo y recursos para que puedas concentrarte en lo que realmente importa.🖥</h1>
 """, unsafe_allow_html=True)
 
-url_carteras = {
+gsheet_urls = {
     "Comfama": Comfama,
     #"Azzorti": r"C:\\Users\\felip\\OneDrive\\Documentos\\Matris\\Azzorti.parquet",
     "Cueros": Cueroz,
