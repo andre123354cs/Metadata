@@ -84,29 +84,29 @@ url_carteras = {
 }
 def cargar_parquet(url):
         return pd.read_excel(url)
+
+  def cargar_parquet(ruta):
+      return pd.read_excel(ruta)
+
+ 
+      cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
+      
+      if cartera_seleccionada:
+          # Cargar los datos
+          df = cargar_parquet(url_carteras[cartera_seleccionada])
+      
+          # Obtener la columna de fecha de creación según la cartera
+          columna_fecha = Fechas_Creacion[cartera_seleccionada][0]
+      
+      
     
-      def cargar_parquet(ruta):
-          return pd.read_excel(ruta)
+      # Mostrar el número de clientes activos
+      num_registros = len(df['Cartera_x'])
+      st.write(f"Clientes Activos: {int(num_registros):,}")
     
-     
-          cartera_seleccionada = st.selectbox("Selecciona Alguna Cartera para descargar actualizacion: ", list(Fechas_Creacion.keys()))
-          
-          if cartera_seleccionada:
-              # Cargar los datos
-              df = cargar_parquet(url_carteras[cartera_seleccionada])
-          
-              # Obtener la columna de fecha de creación según la cartera
-              columna_fecha = Fechas_Creacion[cartera_seleccionada][0]
-          
-          
-        
-          # Mostrar el número de clientes activos
-          num_registros = len(df['Cartera_x'])
-          st.write(f"Clientes Activos: {int(num_registros):,}")
-        
-          csv = df.to_csv(index=False)
-          st.download_button(
-          label= f"Descargar Actualizacion De {cartera_seleccionada}",
-          data=csv,
-          file_name= f"Actualizacion_{cartera_seleccionada}.csv",
-          mime='text/csv')
+      csv = df.to_csv(index=False)
+      st.download_button(
+      label= f"Descargar Actualizacion De {cartera_seleccionada}",
+      data=csv,
+      file_name= f"Actualizacion_{cartera_seleccionada}.csv",
+      mime='text/csv')
