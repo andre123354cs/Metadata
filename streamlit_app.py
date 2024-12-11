@@ -11,7 +11,7 @@ import calendar
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
-import streamlit_authenticator as stauth
+
 
 st.set_page_config(
     page_title="MetaData",
