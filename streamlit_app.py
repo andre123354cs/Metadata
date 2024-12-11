@@ -54,3 +54,9 @@ sheetod='2132397615'
 url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
 Estractor= pd.read_csv(url)
 st.dataframe(Estractor, use_container_width=True)
+
+gsheetid='1HwS85Vk6cn877K9AgjWsrctYqEGSnNT-'
+sheetod='1063943345'
+url = f'https://docs.google.com/spreadsheets/d/{gsheetid}/export?format=csv&gid={sheetod}&format'
+Demos= pd.read_csv(url)
+st.dataframe(Demos, use_container_width=True)
