@@ -27,7 +27,7 @@ def interfaz():
     # Botón para ejecutar la limpieza del caché
     if st.button('Actualizar'):
         clear_cache()
-        st.success('¡Actualizado con éxito!')
+        st.toast(f"✅ ¡Actualización en curso! 🎉")
 
     
     st.markdown("""
