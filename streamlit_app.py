@@ -21,6 +21,16 @@ def interfaz():
     locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
     
 
+    # Función para limpiar el caché
+    def clear_cache():
+        st.cache_data.clear()  # Limpiar el caché de los datos
+    
+    # Botón para ejecutar la limpieza del caché
+    if st.button('Actualizar'):
+        clear_cache()
+        st.success('¡Actualizado con éxito!')
+
+    
     st.markdown("""
     <h1 style='text-align: center; color: #005780; font-size: 15px;'>Nuestro desarrollo de software está transformando la forma en que trabajamos. Al automatizar tareas repetitivas, liberamos tiempo y recursos para que puedas concentrarte en lo que realmente importa.🖥</h1>
     """, unsafe_allow_html=True)
