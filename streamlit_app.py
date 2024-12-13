@@ -24,7 +24,6 @@ def interfaz():
     # Función para limpiar el caché
     def clear_cache():
         st.cache_data.clear()  # Limpiar el caché de los datos
-    st.button('Actualizar')
     # Botón para ejecutar la limpieza del caché
     if st.button('Actualizar'):
         clear_cache()
