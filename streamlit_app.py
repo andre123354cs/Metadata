@@ -283,7 +283,7 @@ def interfaz():
                 
             
                 # Mostrar el número de clientes activos
-                num_registros = len(df['Cartera_x'])
+                num_registros = len(df['Cartera'])
                 st.write(f"Clientes Activos: {int(num_registros):,}")
         
                 csv = df.to_csv(index=False)
