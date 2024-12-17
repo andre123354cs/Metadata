@@ -227,7 +227,7 @@ def interfaz():
     
     
     
-    tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["Panel de Control 🧮", "Actualizaciones 🗂️",'Consulta 🔍','Envios 📤','-','-'])
+    tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["-", "Actualizaciones 🗂️",'Consulta 🔍','Envios 📤','-','-'])
     
     with tab1:
         
